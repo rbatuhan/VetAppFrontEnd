@@ -52,11 +52,13 @@ function AvailableDatesModal({
   }, [modalReload, doctorId]);
 
   const handleNewAvailableDate = (event) => {
+    const date = new Date(event.target.value);
+    const formattedDate = date.toISOString().slice(0, 16);
     setNewAvailableDate({
       ...newAvailableDate,
-      [event.target.name]: event.target.value,
+      availableDate: formattedDate,
     });
-  };
+  };;
 
   const handleUpdateBtn = (aDate) => {
     setUpdateAvailable({
@@ -85,12 +87,22 @@ function AvailableDatesModal({
 
   const handleCreate = async () => {
     try {
-      await createAvailableDate(newAvailableDate);
+      // ISO formatına dönüştürme
+      const date = new Date(newAvailableDate.availableDate);
+      const isoFormattedDate = date.toISOString();
+  
+      // Yeni tarih formatını mevcut nesneye yerleştirme
+      const newAvailableDateWithISO = {
+        ...newAvailableDate,
+        availableDate: isoFormattedDate,
+      };
+  
+      await createAvailableDate(newAvailableDateWithISO);
       setModalReload(!modalReload);
     } catch (error) {
-      console.error("Error creating available date:", error);
+      console.error("Error creating available date:", error.response ? error.response.data : error.message);
     }
-
+  
     setNewAvailableDate({
       availableDate: "",
       doctor: { id: doctorId },
@@ -131,7 +143,7 @@ function AvailableDatesModal({
         <div className="available-newavailable">
           <h2>Yeni Çalışma Günü Ekle :</h2>
           <input
-            type="date"
+            type="datetime-local"
             placeholder="Tarih"
             name="availableDate"
             value={newAvailableDate.availableDate}
@@ -142,7 +154,7 @@ function AvailableDatesModal({
         <div className="available-updateavailable">
           <h2>Çalışma Gününü Güncelle :</h2>
           <input
-            type="date"
+            type="datetime-local"
             placeholder="Tarih"
             name="availableDate"
             value={updateAvailable.availableDate || ""}

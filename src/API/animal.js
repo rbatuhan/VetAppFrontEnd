@@ -2,10 +2,15 @@ import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_APP_BASE_URL + "/api/v1";
 
-export const getAnimals = async () => {
-    const { data } = await axios.get(`${BASE_URL}/animals`);
+export const getAnimals = async (pageNumber = 0, pageSize = 10) => {
+    const { data } = await axios.get(`${BASE_URL}/animals`, {
+      params: {
+        pageNumber,
+        pageSize
+      }
+    });
     return data;
-};
+  };
 
 export const deleteAnimal = async (id) => {
     const { data } = await axios.delete(`${BASE_URL}/animals/${id}`);

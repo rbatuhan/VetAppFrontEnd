@@ -2,8 +2,13 @@ import axios from 'axios';
 
 const BASE_URL = import.meta.env.VITE_APP_BASE_URL + "/api/v1";
 
-export const getDoctors = async () => {
-  const { data } = await axios.get(`${BASE_URL}/doctors`);
+export const getDoctors = async (pageNumber = 0, pageSize = 10) => {
+  const { data } = await axios.get(`${BASE_URL}/doctors`, {
+    params: {
+      pageNumber,
+      pageSize
+    }
+  });
   return data;
 };
 
