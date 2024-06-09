@@ -1,0 +1,86 @@
+.vaccine {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 50px;
+  width: 95vw;
+  height: 100vh;
+  margin: 10px;
+}
+.animalname-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.date-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vaccine-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 10px;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.vaccine-newvaccine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vaccine-updatevaccine {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+td > svg {
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

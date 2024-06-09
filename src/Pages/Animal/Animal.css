@@ -1,0 +1,72 @@
+.animal {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 50px;
+    width: 95vw;
+    height: 100vh;
+    margin: 10px;
+}
+
+.input-petname {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-customername {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.animal-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.animal-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.animal-newanimal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.animal-updateanimal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  td > svg {
+    cursor: pointer;
+  }

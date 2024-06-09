@@ -1,0 +1,1 @@
+API endpoints = https://github.com/rbatuhan/Vet-App

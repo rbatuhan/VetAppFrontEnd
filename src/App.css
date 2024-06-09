@@ -1,0 +1,26 @@
+* {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    padding: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+select {
+    padding: 5px;
+}

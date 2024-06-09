@@ -1,0 +1,59 @@
+.customer {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 50px;
+    width: 95vw;
+    height: 100vh;
+    margin: 10px;
+}
+
+.customer-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 10px;
+    gap: 1rem;
+}
+
+.customer-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-newcustomer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-updatecustomer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  td > svg {
+    cursor: pointer;
+  }
